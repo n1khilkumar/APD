@@ -32,15 +32,18 @@ void check()
 				if(arr1[m]==arr2[m])
 				{
 					//cout<<"\nSink at position: "<<abs(4-i);
-					sink++;
-					arr2[m]=INT_MIN;
+					if(arr1[m]!=INT_MIN)
+					{sink++;
+					arr2[m] = INT_MIN;
 					arr1[m] = INT_MIN;
-					break;
+					}
 				}
 				//cout<<"\nHit at position: "<<abs(4-i);
-				hit++;
+				if(arr1[j]!=INT_MIN)
+				{hit++;
 				arr1[j] = INT_MIN;
 				break;
+				}
 			}
 		}
 	}
@@ -53,7 +56,7 @@ int main()
 	srand(time(0));
 	int num,guess,guess_no = 1; 
 	num = rand()%9000 + 1000;
-//  num = 5111;
+    num = 2210;
 	cout<<num<<endl;
 	while(num!=guess)
 	{
